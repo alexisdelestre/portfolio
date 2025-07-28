@@ -72,6 +72,24 @@
         fill: white;
       }
 
+      .center-link {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        font-size: 1.5rem;
+      }
+
+      .center-link a {
+        color: white;
+        text-decoration: none;
+        transition: opacity 0.2s ease-in-out;
+      }
+
+      .center-link a:hover {
+        opacity: 0.7;
+      }
+
       @media (max-width: 600px) {
         .top-left, .bottom-right {
           padding: 10px;
@@ -85,6 +103,13 @@
       <div class="top-left" id="top-text">
         Alexis DELESTRE &nbsp;.PRODUCT .DESIGN
       </div>
+
+      <div class="center-link">
+        <a href="design-vision.html">
+          <span id="design-vision-text">.design vision</span>
+        </a>
+      </div>
+
       <div class="bottom-right" id="bottom-text">
         <a href="https://www.linkedin.com/in/alexis-delestre/" target="_blank" rel="noopener noreferrer">
           <span id="linkedin-text">LINKEDIN</span>
@@ -114,10 +139,10 @@
       window.addEventListener("load", () => {
         const topTextElement = document.getElementById("top-text");
         const linkedinTextElement = document.getElementById("linkedin-text");
+        const designVisionElement = document.getElementById("design-vision-text");
         scrambleText(topTextElement, "Alexis DELESTRE .PRODUCT .DESIGN", 50);
-        setTimeout(() => {
-          scrambleText(linkedinTextElement, "LINKEDIN", 50);
-        }, 1000);
+        scrambleText(linkedinTextElement, "LINKEDIN", 50);
+        scrambleText(designVisionElement, ".design vision", 50);
       });
     </script>
   </body>
