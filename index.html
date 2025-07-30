@@ -4,6 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="description" content="Alexis Delestre - Product Designer focused on rigorous synthesis and thoughtful design systems" />
     <title>Alexis Delestre - Product Design</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -62,8 +63,11 @@
         transition: opacity 0.2s ease-in-out;
       }
 
-      .bottom-right a:hover {
+      .bottom-right a:hover,
+      .bottom-right a:focus {
         opacity: 0.7;
+        outline: 2px solid rgba(255, 255, 255, 0.5);
+        outline-offset: 2px;
       }
 
       .bottom-right svg {
@@ -86,8 +90,28 @@
         transition: opacity 0.2s ease-in-out;
       }
 
-      .center-link a:hover {
+      .center-link a:hover,
+      .center-link a:focus {
         opacity: 0.7;
+        outline: 2px solid rgba(255, 255, 255, 0.5);
+        outline-offset: 4px;
+      }
+
+      /* Skip link for keyboard navigation */
+      .skip-link {
+        position: absolute;
+        top: -40px;
+        left: 6px;
+        background: #000;
+        color: white;
+        padding: 8px;
+        text-decoration: none;
+        z-index: 100;
+        border-radius: 4px;
+      }
+
+      .skip-link:focus {
+        top: 6px;
       }
 
       @media (max-width: 600px) {
@@ -99,23 +123,24 @@
     </style>
   </head>
   <body>
+    <a href="#main-content" class="skip-link">Skip to main content</a>
     <div class="container">
-      <div class="top-left" id="top-text">
+      <header class="top-left" id="top-text" role="banner">
         Alexis DELESTRE &nbsp;.PRODUCT .DESIGN
-      </div>
+      </header>
 
-      <div class="center-link">
-        <a href="design-vision.html">
+      <main class="center-link" id="main-content" role="main">
+        <a href="design-vision.html" aria-label="Read design vision and philosophy">
           <span id="design-vision-text">.design vision</span>
         </a>
-      </div>
+      </main>
 
-      <div class="bottom-right" id="bottom-text">
-        <a href="https://www.linkedin.com/in/alexis-delestre/" target="_blank" rel="noopener noreferrer">
+      <nav class="bottom-right" id="bottom-text" role="navigation" aria-label="External links">
+        <a href="https://www.linkedin.com/in/alexis-delestre/" target="_blank" rel="noopener noreferrer" aria-label="Visit Alexis Delestre's LinkedIn profile">
           <span id="linkedin-text">LINKEDIN</span>
-          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="#ffffff" viewBox="0 0 256 256"><path d="M224,104a8,8,0,0,1-16,0V59.32l-66.33,66.34a8,8,0,0,1-11.32-11.32L196.68,48H152a8,8,0,0,1,0-16h64a8,8,0,0,1,8,8Zm-40,24a8,8,0,0,0-8,8v72H48V80h72a8,8,0,0,0,0-16H48A16,16,0,0,0,32,80V208a16,16,0,0,0,16,16H176a16,16,0,0,0,16-16V136A8,8,0,0,0,184,128Z"></path></svg>
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="#ffffff" viewBox="0 0 256 256" aria-hidden="true"><path d="M224,104a8,8,0,0,1-16,0V59.32l-66.33,66.34a8,8,0,0,1-11.32-11.32L196.68,48H152a8,8,0,0,1,0-16h64a8,8,0,0,1,8,8Zm-40,24a8,8,0,0,0-8,8v72H48V80h72a8,8,0,0,0,0-16H48A16,16,0,0,0,32,80V208a16,16,0,0,0,16,16H176a16,16,0,0,0,16-16V136A8,8,0,0,0,184,128Z"></path></svg>
         </a>
-      </div>
+      </nav>
     </div>
     <script>
       function scrambleText(element, text, interval = 50, scrambleChars = "ABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890!@#$%^&*()_+-=<>?/|[]{}") {

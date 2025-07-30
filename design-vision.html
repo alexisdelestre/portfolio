@@ -3,8 +3,10 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>.design vision</title>
+  <meta name="description" content="Design philosophy and vision by Alexis Delestre - Product design as rigorous synthesis practice" />
+  <title>.design vision - Alexis Delestre</title>
   <link href="https://fonts.googleapis.com/css2?family=Geist+Mono:wght@400;700&display=swap" rel="stylesheet">
+  <script src="https://unpkg.com/@phosphor-icons/web"></script>
   <style>
     html, body {
       margin: 0;
@@ -29,6 +31,29 @@
       z-index: 0;
     }
 
+    .back-button {
+      position: fixed;
+      top: 20px;
+      left: 20px;
+      z-index: 10;
+      font-size: 1rem;
+    }
+
+    .back-button a {
+      color: white;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      transition: opacity 0.2s ease-in-out;
+    }
+
+    .back-button a:hover,
+    .back-button a:focus {
+      opacity: 0.7;
+      outline: 2px solid rgba(255, 255, 255, 0.5);
+      outline-offset: 2px;
+    }
+
     .content {
       position: relative;
       z-index: 1;
@@ -48,7 +73,30 @@
       margin: 0 0 1.5em 0;
     }
 
+    /* Skip link for keyboard navigation */
+    .skip-link {
+      position: absolute;
+      top: -40px;
+      left: 6px;
+      background: #000;
+      color: white;
+      padding: 8px;
+      text-decoration: none;
+      z-index: 100;
+      border-radius: 4px;
+    }
+
+    .skip-link:focus {
+      top: 6px;
+    }
+
     @media (max-width: 600px) {
+      .back-button {
+        top: 10px;
+        left: 10px;
+        font-size: 0.9rem;
+      }
+
       .content {
         margin: 40px auto;
         padding: 0 16px 40px 16px;
@@ -61,7 +109,13 @@
   </style>
 </head>
 <body>
-  <div class="content">
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+  <nav class="back-button" role="navigation" aria-label="Site navigation">
+    <a href="index.html" aria-label="Return to homepage">
+      <i class="ph ph-arrow-left" aria-hidden="true"></i>
+    </a>
+  </nav>
+  <main class="content" id="main-content" role="main">
     <h2>Le design produit est une pratique de synthèse rigoureuse</h2>
     <p>Le design ne se résume ni à l’interface ni à l’expérience utilisateur. Il est un travail d’équilibre entre :
     la clarté des usages,
@@ -70,36 +124,48 @@
     et les réalités du marché.
     Chaque décision d’interface traduit un choix stratégique. Le design produit relie des intentions à leur exécution, des besoins à des formes, des enjeux complexes à des expériences tangibles.</p>
 
-    <h2>La qualité formelle n’est pas un luxe, mais une exigence structurelle</h2>
-    <p>Un système visuel cohérent, une hiérarchie claire, des composants bien définis ne relèvent pas de l’esthétique décorative. Ils constituent une infrastructure qui soutient la croissance du produit, la fluidité du travail entre équipes et la confiance des utilisateurs.
-    Le design engage à créer des fondations robustes, compréhensibles, réutilisables, comme un développeur construit un code propre.</p>
+    <section aria-labelledby="quality-formelle">
+      <h2 id="quality-formelle">La qualité formelle n'est pas un luxe, mais une exigence structurelle</h2>
+      <p>Un système visuel cohérent, une hiérarchie claire, des composants bien définis ne relèvent pas de l’esthétique décorative. Ils constituent une infrastructure qui soutient la croissance du produit, la fluidité du travail entre équipes et la confiance des utilisateurs.
+      Le design engage à créer des fondations robustes, compréhensibles, réutilisables, comme un développeur construit un code propre.</p>
+    </section>
 
-    <h2>Le design se pense dans la durée</h2>
-    <p>Un produit est un organisme vivant.
-    Le rôle du design est de faciliter l’évolution du produit dans le temps, sans fragiliser ses fondations.
-    Un écran peut être livré en quelques jours, mais un système bien pensé permet à toute une équipe d’itérer des mois durant avec plus de fluidité, de lisibilité et de confiance.
-    L’amélioration continue prime sur la perfection immédiate.</p>
+    <section aria-labelledby="design-duree">
+      <h2 id="design-duree">Le design se pense dans la durée</h2>
+      <p>Un produit est un organisme vivant.
+      Le rôle du design est de faciliter l’évolution du produit dans le temps, sans fragiliser ses fondations.
+      Un écran peut être livré en quelques jours, mais un système bien pensé permet à toute une équipe d’itérer des mois durant avec plus de fluidité, de lisibilité et de confiance.
+      L’amélioration continue prime sur la perfection immédiate.</p>
+    </section>
 
-    <h2>Le design est un travail de relation autant que de forme</h2>
-    <p>Le produit se construit dans une dynamique collective.
-    Le design ne s'impose pas, il se partage, se raconte, se rend lisible pour les autres disciplines.
-    Une bonne intention de design, si elle n’est pas comprise, expliquée ou transmise, reste inopérante.
-    Le design implique une capacité à nommer, documenter, justifier, mais aussi à écouter, reformuler, s’ajuster. La qualité se construit dans la clarté des échanges.</p>
+    <section aria-labelledby="design-relation">
+      <h2 id="design-relation">Le design est un travail de relation autant que de forme</h2>
+      <p>Le produit se construit dans une dynamique collective.
+      Le design ne s'impose pas, il se partage, se raconte, se rend lisible pour les autres disciplines.
+      Une bonne intention de design, si elle n’est pas comprise, expliquée ou transmise, reste inopérante.
+      Le design implique une capacité à nommer, documenter, justifier, mais aussi à écouter, reformuler, s’ajuster. La qualité se construit dans la clarté des échanges.</p>
+    </section>
 
-    <h2>La cohérence est un outil de pensée, pas une contrainte esthétique</h2>
-    <p>Un bon design system n’est pas une prison visuelle, mais un socle de pensée partagée.
-    Il permet d’éviter l’arbitraire, de concentrer l’effort créatif là où il est nécessaire et rendre les décisions plus explicites.
-    La cohérence structure le produit, facilite la contribution des équipes et permet aux utilisateurs de s’orienter. Elle est un vecteur de confiance et d’apprentissage aussi pour l’utilisateur.</p>
+    <section aria-labelledby="design-coherence">
+      <h2 id="design-coherence">La cohérence est un outil de pensée, pas une contrainte esthétique</h2>
+      <p>Un bon design system n’est pas une prison visuelle, mais un socle de pensée partagée.
+      Il permet d’éviter l’arbitraire, de concentrer l’effort créatif là où il est nécessaire et rendre les décisions plus explicites.
+      La cohérence structure le produit, facilite la contribution des équipes et permet aux utilisateurs de s’orienter. Elle est un vecteur de confiance et d’apprentissage aussi pour l’utilisateur.</p>
+    </section>
 
-    <h2>Le design ne vise ni l’effet ni la reconnaissance</h2>
-    <p>L’objectif n’est ni de séduire, ni de se distinguer.
-    Il s’agit d’intervenir avec justesse, au bon niveau de détail, au bon moment dans la chaîne de décision produit.
-    La satisfaction réside dans la précision du geste, la solidité du raisonnement, la pertinence de la solution — même quand elle passe inaperçue.
-    Le design bien fait ne s’impose pas : il se rend évident.</p>
+    <section aria-labelledby="design-effet">
+      <h2 id="design-effet">Le design ne vise ni l'effet ni la reconnaissance</h2>
+      <p>L’objectif n’est ni de séduire, ni de se distinguer.
+      Il s’agit d’intervenir avec justesse, au bon niveau de détail, au bon moment dans la chaîne de décision produit.
+      La satisfaction réside dans la précision du geste, la solidité du raisonnement, la pertinence de la solution — même quand elle passe inaperçue.
+      Le design bien fait ne s’impose pas : il se rend évident.</p>
+    </section>
 
-    <h2>⟶ Vers une pratique alignée</h2>
-    <p>Le design ne promet pas une méthode miracle.
-    Il propose simplement une manière de créer avec attention, précision, humilité et profondeur — en accord avec ses valeurs, ses outils et ses contextes.</p>
-  </div>
+    <section aria-labelledby="design-pratique">
+      <h2 id="design-pratique">⟶ Vers une pratique alignée</h2>
+      <p>Le design ne promet pas une méthode miracle.
+      Il propose simplement une manière de créer avec attention, précision, humilité et profondeur — en accord avec ses valeurs, ses outils et ses contextes.</p>
+    </section>
+  </main>
 </body>
 </html>
