@@ -44,14 +44,13 @@
       text-decoration: none;
       display: inline-flex;
       align-items: center;
+      padding: 12px;
       transition: opacity 0.2s ease-in-out;
     }
 
     .back-button a:hover,
     .back-button a:focus {
       opacity: 0.7;
-      outline: 2px solid rgba(255, 255, 255, 0.5);
-      outline-offset: 2px;
     }
 
     .content {
@@ -86,21 +85,15 @@
       font-size: 0.95rem;
     }
 
-    /* Skip link for keyboard navigation */
-    .skip-link {
-      position: absolute;
-      top: -40px;
-      left: 6px;
-      background: #000;
-      color: white;
-      padding: 8px;
-      text-decoration: none;
-      z-index: 100;
-      border-radius: 4px;
-    }
-
-    .skip-link:focus {
-      top: 6px;
+    .wip-tag {
+      display: inline-block;
+      background: rgba(255, 255, 255, 0.1);
+      color: rgba(255, 255, 255, 0.7);
+      padding: 4px 8px;
+      font-size: 0.75rem;
+      border-radius: 3px;
+      margin-bottom: 0.75em;
+      font-weight: 400;
     }
 
     @media (max-width: 600px) {
@@ -122,13 +115,13 @@
   </style>
 </head>
 <body>
-  <a href="#main-content" class="skip-link">Skip to main content</a>
   <nav class="back-button" role="navigation" aria-label="Site navigation">
     <a href="index.html" aria-label="Return to homepage">
       <i class="ph ph-arrow-left" aria-hidden="true"></i>
     </a>
   </nav>
   <main class="content" id="main-content" role="main">
+    <span class="wip-tag">WIP</span>
     <h2>Le design produit est une pratique de synthèse rigoureuse</h2>
     <p>Le design ne se résume ni à l’interface ni à l’expérience utilisateur. Il est un travail d’équilibre entre :
     la clarté des usages,
